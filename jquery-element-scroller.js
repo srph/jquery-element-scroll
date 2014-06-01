@@ -12,7 +12,7 @@
  *
  * Thinking of renaming this library to 'jquery-div-scroller'
  *
- * @version 0.1
+ * @version 0.2
  * @todo 	tests
  * 			elements other than 100% divs
  *
@@ -55,9 +55,6 @@
 				? 0
 				: 1;
 
-			// Window current top
-			var winTop = win.scrollTop();
-
 			// Currently visible div
 			// Default by negative one to reset
 			// *....
@@ -68,30 +65,33 @@
 				var current = $(this),
 					offset = current.offset();
 
+				// Window current top
+				var winTop = win.scrollTop();
+
 				// Determine the index of the current element
 				// Apparently, If the body is currently not on
 				// the first element, set it to the current
-				if (elm < 0 && offset.top >= winTop ) {
+				if ( elm < 0 && offset.top >= winTop ) {
 					elm = index;
 				}
 			});
 
 			// If direction is upwards and
 			// the current element is negative
-			if ( dir && elm > 0) {
+			if ( dir == 1 && elm > 0 ) {
 				elm--;
 			}
 
 			// If direction is downwards
 			// and as long the current element is not the last element
-			// Animate th screen downwards towards the next element
-			if ( !dir && elm < elms.length ) {
+			// Animate the screen downwards towards the next element
+			if ( dir == 0 && elm < elms.length - 1 ) {
 				elm++;
-			}		
+			}
 
 			// Stop current screen animation
 			// then animate by given speed
-			body.stop().animate({
+			$('html, body').stop().animate({
 				scrollTop: elms.eq(elm).offset().top
 			}, settings.speed);
 
