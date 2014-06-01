@@ -12,7 +12,7 @@
  *
  * Thinking of renaming this library to 'jquery-div-scroller'
  *
- * @version 0.2
+ * @version 0.4
  * @todo 	tests
  * 			elements other than 100% divs
  *
