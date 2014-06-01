@@ -12,7 +12,7 @@
  *
  * Thinking of renaming this library to 'jquery-div-scroller'
  *
- * @version 0.4
+ * @version 0.4.1
  * @todo 	tests
  * 			elements other than 100% divs
  *
@@ -35,9 +35,9 @@
 
 		// Fn settings
 		var settings = $.extend({
-			speed: '400'
+			speed: 400
 		}, {
-			speed: speed
+			speed: parseInt(speed, 10)
 		});
         
         // Starts with the first element
