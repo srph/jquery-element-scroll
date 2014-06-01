@@ -24,3 +24,6 @@ To use, simply:
 ## Credits ##
 
 See this [stackoverflow answer](http://jsfiddle.net/dPWV8/)
+
+## Example ##
+See this [fiddle] (http://jsfiddle.net/dPWV8/)
