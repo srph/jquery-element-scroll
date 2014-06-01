@@ -16,6 +16,8 @@
  * @todo 	tests
  * 			elements other than 100% divs
  *
+ * @example	http://jsfiddle.net/dPWV8/
+ *
  * @see http://stackoverflow.com/a/18953765
  * 		Most of the credits and algorithm actually belongs to this post
  */
