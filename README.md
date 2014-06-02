@@ -23,7 +23,7 @@ To use, simply:
 
 ## Credits ##
 
-See this [stackoverflow answer](http://jsfiddle.net/dPWV8/)
+See this [stackoverflow answer](http://stackoverflow.com/a/18953765)
 
 ## Example ##
-See this [fiddle] (http://jsfiddle.net/dPWV8/)
+See this [fiddle] (http://jsfiddle.net/dPWV8/1/)
