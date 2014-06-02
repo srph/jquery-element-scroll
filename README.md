@@ -26,4 +26,11 @@ To use, simply:
 See this [stackoverflow answer](http://stackoverflow.com/a/18953765)
 
 ## Example ##
+
 See this [fiddle] (http://jsfiddle.net/dPWV8/1/)
+
+## Other Libraries ##
+
+[jquery-scroll-to] (http://demos.flesler.com/jquery/scrollTo/)
+
+[jquery-smooth-scrolling] (https://github.com/kswedberg/jquery-smooth-scroll/)
