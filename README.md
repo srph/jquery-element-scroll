@@ -1,6 +1,6 @@
 jquery-element-scroll
 =====================
-Scroll to the preceding / following element
+A basic jquery plugin that allows you to smooth scroll to the preceding / next element
 
 Intended to be used for 100% height divs (for SPAs) to imitate scrolling by
 applications such as mediafire, etc.
