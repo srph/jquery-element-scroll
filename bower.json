@@ -1,0 +1,11 @@
+{
+    "name": "jquery-element-scorll",
+    "version": "0.5",
+    "ignore": [
+    	"README.md",
+    	"bower.json"
+    ],
+    "dependencies": {
+    	"jquery": ">=2.0"
+    }
+}
