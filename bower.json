@@ -1,6 +1,6 @@
 {
     "name": "jquery-element-scorll",
-    "version": "0.5",
+    "version": "0.5.1",
     "ignore": [
     	"README.md",
     	"bower.json"
