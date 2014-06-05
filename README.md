@@ -20,6 +20,10 @@ To use, simply:
 ```elmScroll()``` accepts 1 int argument for custom scrolling speed
 
 	$('.my-element').elmScroll(700);
+	
+## Bower ##
+
+	bower install jquery-element-scroll
 
 ## Credits ##
 
