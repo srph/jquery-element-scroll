@@ -12,11 +12,11 @@
  *
  * Thinking of renaming this library to 'jquery-div-scroller'
  *
- * @version 0.5
+ * @version 0.6.1
  * @todo 	tests
  * 			elements other than 100% divs
  *
- * @example	http://jsfiddle.net/dPWV8/
+ * @example	http://jsfiddle.net/dPWV8/2/
  *
  * @see http://stackoverflow.com/a/18953765
  * 		Most of the credits and algorithm actually belongs to this post
@@ -100,7 +100,8 @@
 	/**
 	 * Get arrow pressed
 	 *
-	 *
+	 * @param 	int 	key
+	 * @return 	int
 	 */
 	var getArrowPressed = function(key) {
 		switch(key) {
@@ -193,6 +194,7 @@
 	 * Scroll to the provided eq
 	 *
 	 * @param	obj	opts
+	 * @return 	bool
 	 */
 	var scroll = function(opts) {
 		var elements = opts.elements;
@@ -203,6 +205,8 @@
 		$('html, body').stop().animate({
 			scrollTop: elements.eq(eq).offset().top
 		}, speed);
+
+		return false;
 	}
 
 	// Register fn
