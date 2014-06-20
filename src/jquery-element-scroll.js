@@ -45,7 +45,10 @@
 		// Body element
 		var body = $(document.body);
 			
+		// When the DOM is scrolled
 		body.on('DOMMouseScroll mousewheel', function (e) {
+			e.preventDefault();
+
 			// Event data
 			var detail = e.originalEvent.detail;
 			var wheelDelta = e.originalEvent.wheelDelta;
@@ -53,22 +56,61 @@
 			// Scroll direction
 			var _dir = getDirection(detail, wheelDelta);
 
-			// Currently visible div
-			// Default by negative one to reset
-			// *....
+			// Get the current and next element (based on the direction)
 			var curElm = getCurrentElm(_elms, _dir);
 			var nextElm = getNextElm(curElm, _elms, _dir);
 
-			// Stop current screen animation
-			// then animate by given speed
-			$('html, body').stop().animate({
-				scrollTop: _elms.eq(nextElm).offset().top
-			}, _settings.speed);
+			// Scroll to the next element
+			scroll({
+				elements: _elms,
+				next: nextElm,
+				speed: _settings.speed
+			});
 
 			// Avoid flickering and stop event
 			// IDK lel
 			return false;
 		});
+
+		// When the arrow key is pressed
+		body.keydown(function(e) {
+			e.preventDefault();
+
+			// Key code pressed
+			var key = e.keyCode;
+
+			// Scroll direction
+			var _dir = getArrowPressed(key);
+
+			// Get the current and next element (based on the direction)
+			var curElm = getCurrentElm(_elms, _dir);
+			var nextElm = getNextElm(curElm, _elms, _dir);
+
+			// Scroll to the next element
+			scroll({
+				elements: _elms,
+				next: nextElm,
+				speed: _settings.speed
+			});
+
+			return false;
+		});
+	}
+
+	/**
+	 * Get arrow pressed
+	 *
+	 *
+	 */
+	var getArrowPressed = function(key) {
+		switch(key) {
+			case 38:
+				return 1;
+			case 40:
+				return 0;
+		}
+
+		return;
 	}
 
 	/**
@@ -145,6 +187,22 @@
 		}
 
 		return elm;
+	}
+
+	/**
+	 * Scroll to the provided eq
+	 *
+	 * @param	obj	opts
+	 */
+	var scroll = function(opts) {
+		var elements = opts.elements;
+		var eq = opts.next;
+		var speed = opts.speed;
+		// Stop current screen animation
+		// then animate by given speed
+		$('html, body').stop().animate({
+			scrollTop: elements.eq(eq).offset().top
+		}, speed);
 	}
 
 	// Register fn
